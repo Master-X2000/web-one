@@ -1,0 +1,46 @@
+     /* || RESET*/
+
+     *,
+     *::after,
+     *::before {
+         margin:0;
+         padding:0;
+         box-sizing:border-box;
+     }
+     
+     img {
+         display: block;
+         width: 100%;
+         height:auto;
+     }
+     
+     input, 
+     button,
+     textarea {
+         font: inherit;
+     }
+     
+         /* || UTILITY STYLES*/
+     
+         .offscreen {
+             position: absolute;
+             left: -100000000000px;
+         }
+         
+         .nowrap {
+             white-space:nowrap;
+         }
+         
+         .center {
+             text-align:center;
+         }
+     
+         html {
+             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+             font-size:1.5rem;
+         }
+     
+         /* || VARIABLES */
+     /* :root {
+     
+     } */

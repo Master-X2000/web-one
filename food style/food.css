@@ -1,0 +1,233 @@
+     /* || RESET*/
+
+     *,
+     *::after,
+     *::before {
+         margin:0;
+         padding:0;
+         box-sizing:border-box;
+     }
+     
+     img {
+         display: block;
+         width: 100%;
+         height:auto;
+     }
+     
+     input, 
+     button,
+     textarea {
+         font: inherit;
+     }
+     
+         /* || UTILITY STYLES*/
+     
+         .offscreen {
+             position: absolute;
+             left: -100000000000px;
+         }
+         
+         .nowrap {
+             white-space:nowrap;
+         }
+         
+         .center {
+             text-align:center;
+         }
+     
+         html {
+             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+             font-size:1.5rem;
+         }
+     
+/* || VARIABLES */
+
+:root {
+    
+    /* || COLORS */
+    --BGCOLOR: #222;
+    --BGIMAGE: radial-gradient(hsl(0, 0%, 43%), #000);
+    --HEADER-COLOR: whitesmoke;
+    --HEADER-BGCOLOR: #111;
+    --HEADER-BGIMAGE: linear-gradient(45deg, #444, #333, #222, #111, #000);
+    --LIGHT-COLOR: whitesmoke;
+    --DARK-COLOR: #111;
+    --HIGHLIGHT-COLOR:  #DDD;
+    --SECTION-COLOR: #333;
+    --BORDER-COLOR: whitesmoke; 
+
+
+    /* || FONTS */
+    --FS: clamp(1.25em, 2.5vh, 2.5em);
+    --FS-L: calc(100% + 5px);
+    --FS-XL: calc(100% + 10px);
+
+    /* || PADDING */
+    --PADDING: 0.5rem;
+    --PADDING-LARGE: 1rem;
+
+    /* || BORDERS */
+    --BORDER-RADIUS:5px;
+    --BORDERS: 1px solid var(--BORDER-COLOR);
+
+    /* || SHADOWS */
+    --SHADOW-DOWN: 0px 0.5px 5px  whitesmoke;
+    --SHADOW-REGULAR: -3px 3px 5px 2px;
+    --SHADOW: -3px 3px 5px 2px;
+
+}
+
+    /* || GENERAL STYLES */
+html {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:var(--FS);
+    background-image: var(--BGIMAGE)
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--LIGHT-COLOR);
+    box-shadow: var(--SHADOW-DOWN);
+    display: flex;
+    flex-flow: column nowrap;
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+a:any-link {
+    color: var(--LIGHT-COLOR);
+    text-decoration-line: none;
+}
+
+a:hover, a:focus-visible {
+   opacity: 0.7;
+}
+
+    /*  || HEADER */
+
+header {
+    background-image: var(--HEADER-BGIMAGE);
+    position:sticky;
+    top:0;
+    box-shadow: var(--SHADOW-DOWN);
+    display: flex;
+    column-gap:0.rem;
+    padding-left:0.2rem;
+    padding-block:0.5rem;
+    flex-flow: row nowrap;
+    width:100%;
+}
+
+
+.header__h1 {
+    font-size: var(--FS-XL)
+}
+
+
+.back {
+    background-color:transparent;
+    border:none;
+    width:44px;
+    height:44px;
+    position: relative;
+/*     display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items:center; */
+}
+
+.back__icon, 
+.back__icon::after, 
+.back__icon::before {
+    display:block;
+    background-color: var(--LIGHT-COLOR);
+    width: 30px;
+    height: 5px;
+    border-radius: var(--BORDER-RADIUS);
+    position: absolute;
+}
+
+.back__icon, 
+.back__icon::after, 
+.back__icon::before {
+    content: "";
+    width: 18px;
+    height: 5px; 
+}
+
+ .back__icon::after{
+    transform: translate(-5px, 5px)  rotate(45deg) 
+}
+
+.back__icon::before{
+    transform: translate(-5px, -5px)  rotate(-45deg) 
+}
+
+
+/* || FOOTER */
+
+footer {
+    background-image: var(--HEADER-BGIMAGE);
+    text-align:center;
+    padding: 0.2rem;
+}
+
+/* || MAIN */
+
+
+.hero img {
+    margin:1rem auto;
+    width:80%;
+    border-radius:calc(var(--BORDER-RADIUS) * 3);
+    box-shadow: var(--SHADOW-DOWN);
+}
+
+.info p {
+    padding: 0.3rem;
+    text-align:justify;
+    text-indent:2rem;
+    line-height:1.3rem;
+}
+
+h2 {
+    padding:var(--PADDING);
+}
+
+ /* HORIZONTAL MENU */
+ 
+  .horizontal-menu {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns:36%;
+    gap: 0.5rem;
+
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+ }
+
+ .menu-item {
+    margin-block: 1rem;
+    padding: var(--PADDING);
+    background-color: #222;
+    border-radius: calc(var(--BORDER-RADIUS) * 2);
+    box-shadow:var(--SHADOW-DOWN);
+    inline-size: 100%;
+    object-fit: cover;
+    min-height: 200px;
+ }
+
+ .menu-item img {
+    aspect-ratio:16/16;
+    object-fit: cover;
+    border-radius: calc(var(--BORDER-RADIUS) * 3);
+ }
+
+ h3 {
+    text-align:center;
+ }                                                                              
